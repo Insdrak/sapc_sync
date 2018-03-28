@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="sapc_sync:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="sapc_sync-1.0.war">
+      <element id="artifact" artifact-name="sapc_sync:war exploded" />
+    </root>
+  </artifact>
+</component>
