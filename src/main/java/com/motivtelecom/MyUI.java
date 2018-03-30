@@ -1,7 +1,5 @@
 package com.motivtelecom;
 
-import javax.servlet.annotation.WebServlet;
-
 import com.motivtelecom.dao.FidExtra;
 import com.motivtelecom.dao.JDBCQuerries;
 import com.motivtelecom.dao.SAPCObject;
@@ -18,6 +16,7 @@ import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import javax.servlet.annotation.WebServlet;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -90,7 +89,7 @@ public class MyUI extends UI {
         List<FidExtra> bssList = new ArrayList<>();
         String resultNotification = "";
         for (SAPCObject sapcObject:sapcObjects){
-            if (sapcObject.getFid().intValue()!=70){
+            if (sapcObject.getFid().intValue()!=70||sapcObject.getFid().intValue()!=1701||sapcObject.getFid().intValue()!=1702){
                 sapcList.add(sapcObject);
             }
         }

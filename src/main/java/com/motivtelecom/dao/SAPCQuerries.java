@@ -68,7 +68,7 @@ public class SAPCQuerries {
         ModificationItem item = new ModificationItem(DirContext.REPLACE_ATTRIBUTE, attr);
         ldapTemplateWrite.modifyAttributes("CN=ntd,DC=motiv",new ModificationItem[] { item });
         */
-    public String getSAPCDataByNumber (String in_number){
+    private String getSAPCDataByNumber(String in_number){
         //79502021797
         //79000409126
         in_number = "7".concat(in_number);
@@ -78,7 +78,7 @@ public class SAPCQuerries {
 
         try {
             List<String> list = template.search(query, new AttributesMapper<String>() {
-                public String mapFromAttributes(Attributes attrs) throws javax.naming.NamingException {
+                public String mapFromAttributes(Attributes attrs) {
                     Attribute attribute;
                     try {
                         attribute = attrs.get("epc-groupids");
