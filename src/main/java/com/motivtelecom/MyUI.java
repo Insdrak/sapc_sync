@@ -89,7 +89,7 @@ public class MyUI extends UI {
         List<FidExtra> bssList = new ArrayList<>();
         String resultNotification = "";
         for (SAPCObject sapcObject:sapcObjects){
-            if (sapcObject.getFid().intValue()!=70||sapcObject.getFid().intValue()!=1701||sapcObject.getFid().intValue()!=1702){
+            if (sapcObject.getFid().intValue()!=70&&sapcObject.getFid().intValue()!=1701&&sapcObject.getFid().intValue()!=1702){
                 sapcList.add(sapcObject);
             }
         }

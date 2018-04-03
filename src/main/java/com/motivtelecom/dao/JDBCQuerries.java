@@ -97,12 +97,19 @@ public class JDBCQuerries {
             " AND SYSDATE BETWEEN SA.DATTIM1 AND SA.DATTIM2 "+
             " AND S2B.SERV_ID = S2F.SERV_ID "+
             " AND EXISTS "+
+            " AND EXISTS "+
             " (SELECT 1 "+
+            " FROM SYSBEE.FID_RULE C "+
+            " WHERE "+
+            " C.R_CTRL_DEV_ID  = 22 "+
+            " AND C.F_ID  = S2F.F_ID ) ";
+            /*" (SELECT 1 "+
             " FROM SYSBEE.F_MAPI_CDV_SUBST C "+
             " WHERE "+
             " C.SUBST_CTRL_DEV_ID  = 22 "+
             " AND C.F_ID  = S2F.F_ID "+
-            " AND SYSDATE BETWEEN C.DATTIM1 AND C.DATTIM2) ";
+            " AND SYSDATE BETWEEN C.DATTIM1 AND C.DATTIM2) ";*/
+
         try (Connection connection = template.getDataSource().getConnection()) {
             try (PreparedStatement preparedStatement = connection.prepareStatement(sql)){
                 preparedStatement.setNString(1, ouz);
