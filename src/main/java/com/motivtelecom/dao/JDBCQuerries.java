@@ -97,7 +97,6 @@ public class JDBCQuerries {
             " AND SYSDATE BETWEEN SA.DATTIM1 AND SA.DATTIM2 "+
             " AND S2B.SERV_ID = S2F.SERV_ID "+
             " AND EXISTS "+
-            " AND EXISTS "+
             " (SELECT 1 "+
             " FROM SYSBEE.FID_RULE C "+
             " WHERE "+
